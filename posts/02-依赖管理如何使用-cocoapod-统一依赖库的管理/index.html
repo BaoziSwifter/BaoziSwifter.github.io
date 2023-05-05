@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="本资源由 itjc8.com 收集整理 精选评论 *虎： 如何回复讲师的回复？只能创建新的留言回复吗？
+官方客服回复： 是的，想要回复讲师的答复，可以在新留言里面的开头标记说明就行
+*虎： &ldquo;第七步，一旦更新的代码并入主分支后，要通过 Slack 等内部通信软件告诉所有开发者 pull 或者 rebase 主分支的代码，并执行pod install来更新他们开发环境的所有依赖库&quot;能否把更新的依赖库也一并 push 到远端仓库，这样团队里其他开发人员就不需要额外 pod install 了？
+讲师回复： 看得很仔细哦，更新和 push 到远程仓库的是 Podfile 以及 Podfile.log 文件，团队其他人员还是需要执行 pod install 安装并更新 Pods 文件夹，这个 Pod 文件夹存放的是所有第三方库的源码文件，我们一般并不把该文件夹放到 Git 里面。因此每个开发环境都需要执行 pod install 来更新。文章中提到，如果开发者不执行 pod install 是没有办法编译项目的，并且有错误提示。
+**聪： 还不如直接看官网来的详细和简单！
+讲师回复： 哈哈，技术的准确性都以官方文档为准哦。现在 iOS 开发已经不是学习了系统提供的 API 就可以了，还需要学习系统架构，自动化，代码规范，单元测试。在团队协助的时候还需要制定代码管理流程与规范。目前这些内容在苹果官网都没有提供官方的方案，我们的课程是通过一个类似朋友圈 App 作为案例把开发过程中的各个方面连贯起来讲述，希望能成为官方文档的一个补充。
+**华： 老师讲的比较细
+**不吃窝边草： CocoaPods 管理依赖库的依赖，这种A依赖B，B依赖C,不是链表么？
+讲师回复： 有时候并不是单链条的链表那么简单哦，可能是一个图，要为图找出依赖关系，需要使用拓扑排序。
+**昆： 老师你好，关于pod update的描述，我有个疑问：如果是使用了 podName，&rsquo;=version&rsquo; 这时候 通过pod update 也会使用 = 号的版本号，而不会去所有都更新吧？">
+    <meta name="generator" content="Hugo 0.108.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="" />
+<meta property="og:description" content="本资源由 itjc8.com 收集整理 精选评论 *虎： 如何回复讲师的回复？只能创建新的留言回复吗？
+官方客服回复： 是的，想要回复讲师的答复，可以在新留言里面的开头标记说明就行
+*虎： &ldquo;第七步，一旦更新的代码并入主分支后，要通过 Slack 等内部通信软件告诉所有开发者 pull 或者 rebase 主分支的代码，并执行pod install来更新他们开发环境的所有依赖库&quot;能否把更新的依赖库也一并 push 到远端仓库，这样团队里其他开发人员就不需要额外 pod install 了？
+讲师回复： 看得很仔细哦，更新和 push 到远程仓库的是 Podfile 以及 Podfile.log 文件，团队其他人员还是需要执行 pod install 安装并更新 Pods 文件夹，这个 Pod 文件夹存放的是所有第三方库的源码文件，我们一般并不把该文件夹放到 Git 里面。因此每个开发环境都需要执行 pod install 来更新。文章中提到，如果开发者不执行 pod install 是没有办法编译项目的，并且有错误提示。
+**聪： 还不如直接看官网来的详细和简单！
+讲师回复： 哈哈，技术的准确性都以官方文档为准哦。现在 iOS 开发已经不是学习了系统提供的 API 就可以了，还需要学习系统架构，自动化，代码规范，单元测试。在团队协助的时候还需要制定代码管理流程与规范。目前这些内容在苹果官网都没有提供官方的方案，我们的课程是通过一个类似朋友圈 App 作为案例把开发过程中的各个方面连贯起来讲述，希望能成为官方文档的一个补充。
+**华： 老师讲的比较细
+**不吃窝边草： CocoaPods 管理依赖库的依赖，这种A依赖B，B依赖C,不是链表么？
+讲师回复： 有时候并不是单链条的链表那么简单哦，可能是一个图，要为图找出依赖关系，需要使用拓扑排序。
+**昆： 老师你好，关于pod update的描述，我有个疑问：如果是使用了 podName，&rsquo;=version&rsquo; 这时候 通过pod update 也会使用 = 号的版本号，而不会去所有都更新吧？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://BaoziSwifter.github.io/posts/02-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-cocoapod-%E7%BB%9F%E4%B8%80%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="posts" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="本资源由 itjc8.com 收集整理 精选评论 *虎： 如何回复讲师的回复？只能创建新的留言回复吗？
+官方客服回复： 是的，想要回复讲师的答复，可以在新留言里面的开头标记说明就行
+*虎： &ldquo;第七步，一旦更新的代码并入主分支后，要通过 Slack 等内部通信软件告诉所有开发者 pull 或者 rebase 主分支的代码，并执行pod install来更新他们开发环境的所有依赖库&quot;能否把更新的依赖库也一并 push 到远端仓库，这样团队里其他开发人员就不需要额外 pod install 了？
+讲师回复： 看得很仔细哦，更新和 push 到远程仓库的是 Podfile 以及 Podfile.log 文件，团队其他人员还是需要执行 pod install 安装并更新 Pods 文件夹，这个 Pod 文件夹存放的是所有第三方库的源码文件，我们一般并不把该文件夹放到 Git 里面。因此每个开发环境都需要执行 pod install 来更新。文章中提到，如果开发者不执行 pod install 是没有办法编译项目的，并且有错误提示。
+**聪： 还不如直接看官网来的详细和简单！
+讲师回复： 哈哈，技术的准确性都以官方文档为准哦。现在 iOS 开发已经不是学习了系统提供的 API 就可以了，还需要学习系统架构，自动化，代码规范，单元测试。在团队协助的时候还需要制定代码管理流程与规范。目前这些内容在苹果官网都没有提供官方的方案，我们的课程是通过一个类似朋友圈 App 作为案例把开发过程中的各个方面连贯起来讲述，希望能成为官方文档的一个补充。
+**华： 老师讲的比较细
+**不吃窝边草： CocoaPods 管理依赖库的依赖，这种A依赖B，B依赖C,不是链表么？
+讲师回复： 有时候并不是单链条的链表那么简单哦，可能是一个图，要为图找出依赖关系，需要使用拓扑排序。
+**昆： 老师你好，关于pod update的描述，我有个疑问：如果是使用了 podName，&rsquo;=version&rsquo; 这时候 通过pod update 也会使用 = 号的版本号，而不会去所有都更新吧？">
+
+<meta itemprop="wordCount" content="360">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="本资源由 itjc8.com 收集整理 精选评论 *虎： 如何回复讲师的回复？只能创建新的留言回复吗？
+官方客服回复： 是的，想要回复讲师的答复，可以在新留言里面的开头标记说明就行
+*虎： &ldquo;第七步，一旦更新的代码并入主分支后，要通过 Slack 等内部通信软件告诉所有开发者 pull 或者 rebase 主分支的代码，并执行pod install来更新他们开发环境的所有依赖库&quot;能否把更新的依赖库也一并 push 到远端仓库，这样团队里其他开发人员就不需要额外 pod install 了？
+讲师回复： 看得很仔细哦，更新和 push 到远程仓库的是 Podfile 以及 Podfile.log 文件，团队其他人员还是需要执行 pod install 安装并更新 Pods 文件夹，这个 Pod 文件夹存放的是所有第三方库的源码文件，我们一般并不把该文件夹放到 Git 里面。因此每个开发环境都需要执行 pod install 来更新。文章中提到，如果开发者不执行 pod install 是没有办法编译项目的，并且有错误提示。
+**聪： 还不如直接看官网来的详细和简单！
+讲师回复： 哈哈，技术的准确性都以官方文档为准哦。现在 iOS 开发已经不是学习了系统提供的 API 就可以了，还需要学习系统架构，自动化，代码规范，单元测试。在团队协助的时候还需要制定代码管理流程与规范。目前这些内容在苹果官网都没有提供官方的方案，我们的课程是通过一个类似朋友圈 App 作为案例把开发过程中的各个方面连贯起来讲述，希望能成为官方文档的一个补充。
+**华： 老师讲的比较细
+**不吃窝边草： CocoaPods 管理依赖库的依赖，这种A依赖B，B依赖C,不是链表么？
+讲师回复： 有时候并不是单链条的链表那么简单哦，可能是一个图，要为图找出依赖关系，需要使用拓扑排序。
+**昆： 老师你好，关于pod update的描述，我有个疑问：如果是使用了 podName，&rsquo;=version&rsquo; 这时候 通过pod update 也会使用 = 号的版本号，而不会去所有都更新吧？"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="本资源由-itjc8com-收集整理">本资源由 itjc8.com 收集整理</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h3 id="精选评论">精选评论</h3>
+<h5 id="虎">*虎：</h5>
+<blockquote>
+<p>如何回复讲师的回复？只能创建新的留言回复吗？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-官方客服回复">    官方客服回复：</h6>
+<blockquote>
+<p>    是的，想要回复讲师的答复，可以在新留言里面的开头标记说明就行</p>
+</blockquote>
+<h5 id="虎-1">*虎：</h5>
+<blockquote>
+<p>&ldquo;第七步，一旦更新的代码并入主分支后，要通过 Slack 等内部通信软件告诉所有开发者 pull 或者 rebase 主分支的代码，并执行pod install来更新他们开发环境的所有依赖库&quot;能否把更新的依赖库也一并 push 到远端仓库，这样团队里其他开发人员就不需要额外 pod install 了？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复">    讲师回复：</h6>
+<blockquote>
+<p>    看得很仔细哦，更新和 push 到远程仓库的是 Podfile 以及 Podfile.log 文件，团队其他人员还是需要执行 pod install 安装并更新 Pods 文件夹，这个 Pod 文件夹存放的是所有第三方库的源码文件，我们一般并不把该文件夹放到 Git 里面。因此每个开发环境都需要执行 pod install 来更新。文章中提到，如果开发者不执行 pod install 是没有办法编译项目的，并且有错误提示。</p>
+</blockquote>
+<h5 id="聪">**聪：</h5>
+<blockquote>
+<p>还不如直接看官网来的详细和简单！</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-1">    讲师回复：</h6>
+<blockquote>
+<p>    哈哈，技术的准确性都以官方文档为准哦。现在 iOS 开发已经不是学习了系统提供的 API 就可以了，还需要学习系统架构，自动化，代码规范，单元测试。在团队协助的时候还需要制定代码管理流程与规范。目前这些内容在苹果官网都没有提供官方的方案，我们的课程是通过一个类似朋友圈 App 作为案例把开发过程中的各个方面连贯起来讲述，希望能成为官方文档的一个补充。</p>
+</blockquote>
+<h5 id="华">**华：</h5>
+<blockquote>
+<p>老师讲的比较细</p>
+</blockquote>
+<h5 id="不吃窝边草">**不吃窝边草：</h5>
+<blockquote>
+<p>CocoaPods 管理依赖库的依赖，这种A依赖B，B依赖C,不是链表么？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-2">    讲师回复：</h6>
+<blockquote>
+<p>    有时候并不是单链条的链表那么简单哦，可能是一个图，要为图找出依赖关系，需要使用拓扑排序。</p>
+</blockquote>
+<h5 id="昆">**昆：</h5>
+<blockquote>
+<p>老师你好，关于pod update的描述，我有个疑问：如果是使用了 podName，&rsquo;=version&rsquo; 这时候 通过pod update 也会使用 = 号的版本号，而不会去所有都更新吧？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-3">    讲师回复：</h6>
+<blockquote>
+<p>    不是的哦，一旦执行 pod update，会把版本号自动更新了。我们应该手动更新版本后，然后执行 pod install 来安装。</p>
+</blockquote>
+<h5 id="一">*一：</h5>
+<blockquote>
+<p>感谢老师的讲解😀</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-4">    讲师回复：</h6>
+<blockquote>
+<p>    也感谢你的支持。</p>
+</blockquote>
+<h5 id="辰">*辰：</h5>
+<blockquote>
+<p>每个库的PodSpec文件里会配置它所依赖的库，CocoaPods 就是根据这个文件找出库的依赖库，依次类推。</p>
+</blockquote>
+<h5 id="潇">*潇：</h5>
+<blockquote>
+<p>老师，如果pod里面的第三方库都指定了准确的版本号，是不是用 pod update 也可以？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-5">    讲师回复：</h6>
+<blockquote>
+<p>    不是的，如果我们执行了 pod update 命令，就会把执行的机器中的第三方库版本给更新了，这不是我们想要的效果，为了保证整个团队都使用统一的版本，我们应该让一个人更新版本，并在测试完毕后合并到主分支供大家使用，一个团队在一个时间只有一个人更新第三方库的版本，其他人使用 pod install 来使用就可以了。</p>
+</blockquote>
+<h5 id="超">**超：</h5>
+<blockquote>
+<p>Cocopods 依赖库冲突怎么解决？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-6">    讲师回复：</h6>
+<blockquote>
+<p>    请把问题描述清楚哦，这样我好方便回答。</p>
+</blockquote>
+<h5 id="龙">**龙：</h5>
+<blockquote>
+<p>可能我自己写的不太清楚，思考题中，确实还不了解是通过什么算法来管理依赖库的依赖呢，这方面还请赐教。上网查了一些，不过总觉得不对。有关于第三库的管理和使用上，我举个例子，比如我使用Alamofire，一般会在项目中再封装一层，比如叫HttpUtils，而这个HttpUtils我通过Swift Package进行本地化的组件化管理，如果这个HttpUtils写的好，就放在公司内网，大家都可以使用。不知道这样表达是否清晰？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-7">    讲师回复：</h6>
+<blockquote>
+<p>    我想问的是 CocoaPods 的内部实现，想让大家不仅会用，还知道里面是怎样实现的，一旦懂了原理，替换成不同的包管理工具都有一致的思路。你说到的情况（HttpUtils）其实是对的，我们在 Moments App 里面也有一个底层网络通信模块，在 APISession 里面。我们也可以把它独立出来成为一个 DesignKit 这样的组件。但是只要逻辑是结耦（目前已经是了），物理上的分离只是水到渠成的事情。同理，路由模块，数据存储那些都可以独立出来。</p>
+</blockquote>
+<h5 id="泽">**泽：</h5>
+<blockquote>
+<p>老师，我自己新建了一个Moments工程， pod install以后，像这些Moments.xcodeproj/project.pbxprojMoments.xcodeproj/project.xcworkspace/contents.xcworkspacedataMoments.xcodeproj/xcuserdata/guoruize_account.xcuserdatad/xcschemes/xcschememanagement.plist这样的文件需要忽略吗， 还是让git管理起来。</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-8">    讲师回复：</h6>
+<blockquote>
+<p>    需要呀，请看看我们的  .gitignore 文件，在这里 <a href="https://github.com/lagoueduCol/iOS-linyongjian/blob/main/.gitignore#L122">https://github.com/lagoueduCol/iOS-linyongjian/blob/main/.gitignore#L122</a></p>
+</blockquote>
+<h5 id="泽-1">**泽：</h5>
+<blockquote>
+<p>CocoaPods是通过.podspec文件 来管理依赖库，在这个文件里配置依赖库的依赖。不知道对不对。</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-9">    讲师回复：</h6>
+<blockquote>
+<p>    你说得对，第三方自己也使用 .podspec 文件来指明依赖库，可以一层层去找出所有依赖关系。</p>
+</blockquote>
+<h5 id="龙-1">**龙：</h5>
+<blockquote>
+<p>在.podsepc文件中，有一个dependency参数来管理依赖库的依赖我现在的思路是用cocopods来管理第三方，考虑第三方一般都需要自己再封装一层，在现有项目中再创建SwiftPackage进行封装。</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-10">    讲师回复：</h6>
+<blockquote>
+<p>    哦哦，我不是很明白你说的办法，如果你想回答的是思考题的问题，我想问在 CocoaPods 里面到底是怎样计算出依赖项之间的依赖顺序，我的提示是它使用了一个算法，看看你能不能找出来哦。</p>
+</blockquote>
+<h5 id="钦">**钦：</h5>
+<blockquote>
+<p>如果有一些自己搭建的私有pod ，合适在放在哪一步把私有的pod源引入呢？。</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-11">    讲师回复：</h6>
+<blockquote>
+<p>    我们会在 第 08 讲｜设计组件：DesignKit 组件桥接设计与开发规范 讲述如何创建和使用私有 Pod。</p>
+</blockquote>
+<h5 id="永">**永：</h5>
+<blockquote>
+<p>每次思考的问题都没有配答案的吗</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-12">    讲师回复：</h6>
+<blockquote>
+<p>    后面会有编程题，那些题目比较容易验证，其他的思考题是想让大家多思考并把想法发出来，大家相互启发，共同学习与进步。</p>
+</blockquote>
+<h5 id="泽-2">**泽：</h5>
+<blockquote>
+<p>老师您好，在团队项目中，像Podfile文件更改，只需要一个人去做吧，比如A把依赖1的版本改了， 执行了pod install命令， 在本地开发没问题，推到了git， B把依赖2的版本改了， 也推到了git，是不是团队成员每个人拉下来代码都需要先进行一次pod install，以保证最新的。</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-13">    讲师回复：</h6>
+<blockquote>
+<p>    是的呀，如果 Git 上的 Podfile 改动了，不执行 pod install 是不能编译项目的，所以你可以先编译，发现有问题再执行  pod install 来重新安装 Pod。</p>
+</blockquote>
+<h5 id="6158">**6158：</h5>
+<blockquote>
+<p>谢谢老师的回复，我的意思是pod &lsquo;DesignKit&rsquo;, :path = false这里，在我看来是指向了一个本地路径？如果我的理解正确的话，那么是否所有设备都需要在相同的本地路径里保存一份相关代码？我目前只用过:git =，我的理解是:path =的区别只是一个在本地一个在git服务器上？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-14">    讲师回复：</h6>
+<blockquote>
+<p>    是的，path 指本地路径，可以在代码库里面看到 DesignKit 在 Moments App 下的一个子目录，位于 Frameworks 里面。当我们 Git clone Moments 的 Repo 时就包含了 DesignKit 的源码了。如果有需要可以把 DesignKit 变成一个独立的 Repo，这个在 08 讲会详细讲述。</p>
+</blockquote>
+<h5 id="彬">**彬：</h5>
+<blockquote>
+<p>#我提问：Required ruby-2.7.1 is not installed.To install do: &lsquo;rvm install &ldquo;ruby-2.7.1&rdquo;&lsquo;只要我在终端cd 到项目文件夹目录下，就会有这样的提示，我明明有装rbenv，有装ruby 2.7.1，那这个问题怎么解决?#讲师回复：请执行一下 rbenv versions 看一下到底有没有安装成功，这个安装过程需要一段时间哦。#回复讲师：我查看了一下 rbenv -v 是能查看到版本&rdquo;&gt;1.1.2 的。但是我看到了，我电脑上是安装了 rvm 的，我现在卸载 rvm 看看，可能是 rvm 和 rbenv 的冲突</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-15">    讲师回复：</h6>
+<blockquote>
+<p>    是的呀，RVM 会和 rbenv 冲突的呀，我们在文章里面也提到过。如果可以，请只使用 rbenv。</p>
+</blockquote>
+<h5 id="彬-1">**彬：</h5>
+<blockquote>
+<p>post_install do |installer| installer.pods_project.targets.each do |target| target.build_configurations.each do |config| config.build_settings.delete &lsquo;IPHONEOS_DEPLOYMENT_TARGET&rsquo; config.build_settings[&ldquo;EXCLUDED_ARCHS[sdk=iphonesimulator*]&rdquo;] = &ldquo;arm64&rdquo; end endend；；；Podfile中的这段代码没看懂是什么作用的。</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-16">    讲师回复：</h6>
+<blockquote>
+<p>    可以看一下这个 commit，这段代码用于解决一个构建时候的 warning <a href="https://github.com/lagoueduCol/iOS-linyongjian/commit/d30b4048aec9d1bc76626e410c83f208758c54f3#diff-8f7d6adf31268a2d897ee34bd170592648d6e520aa237104395e4a4438af50cb">https://github.com/lagoueduCol/iOS-linyongjian/commit/d30b4048aec9d1bc76626e410c83f208758c54f3#diff-8f7d6adf31268a2d897ee34bd170592648d6e520aa237104395e4a4438af50cb</a></p>
+</blockquote>
+<h5 id="鹏">*鹏：</h5>
+<blockquote>
+<p>您好，使用cocoapods依赖自己的库，是要将自己的库放到本地统一管理起来，然后使用:path链接到本地的路径吗？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-17">    讲师回复：</h6>
+<blockquote>
+<p>    是的，我们会在第 08 讲讲述如何封装自己的 Pod。使用的时候就正如你说的那样
+pod &lsquo;DesignKit&rsquo;, :path =&gt; &lsquo;./Frameworks/DesignKit&rsquo;, :inhibit_warnings =&gt; false</p>
+</blockquote>
+<h5 id="6158-1">**6158：</h5>
+<blockquote>
+<p>请问内部依赖库是放在本地的吗？如果是的话，是需要所有设备都保存一份本地文件吗？</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-18">    讲师回复：</h6>
+<blockquote>
+<p>    请问你说是这些依赖库的源代码文件吗？我们只需要把 Podfile 和 Podfile.log 文件保存到 Git 服务器上，每次执行 bundle exec pod install 都能重新下载统一版本的依赖库到 Pods 文件夹里面。Pods 文件夹不需要放到 Git 服务器中。</p>
+</blockquote>
+<h5 id="召">*召：</h5>
+<blockquote>
+<p>团队成员的cocoapods的版本号也得保持一致</p>
+</blockquote>
+<h5 id="彬-2">**彬：</h5>
+<blockquote>
+<p>Required ruby-2.7.1 is not installed.To install do: &lsquo;rvm install &ldquo;ruby-2.7.1&rdquo;&lsquo;只要我在终端cd 到项目文件夹目录下，就会有这样的提示，我明明有装rbenv，有装ruby 2.7.1，那这个问题怎么解决</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-19">    讲师回复：</h6>
+<blockquote>
+<p>    请执行一下  rbenv versions 看一下到底有没有安装成功，这个安装过程需要一段时间哦。</p>
+</blockquote>
+<h5 id="9149">**9149：</h5>
+<blockquote>
+<p>pod outdated这个好</p>
+</blockquote>
+<h5 id="6126">**6126：</h5>
+<blockquote>
+<p>把source从https://cdn.cocoapods.org/改成https://github.com/CocoaPods/Specs.git后执行pod install提示 如下信息，根据提示修改还是无法解决Unable to add a source with url <code>https://github.com/CocoaPods/Specs.git</code> named <code>cocoapods</code>.
+You can try adding it manually in <code>/Users/mengmengzhang/.cocoapods/repos</code> or via <code>pod repo add</code>.</p>
+</blockquote>
+<h6 id="nbspnbspnbsp-讲师回复-20">    讲师回复：</h6>
+<blockquote>
+<p>    哈哈，我也没有遇到个这个问题呀，但是临时 Google 了一下，找到答案啦，比如 Github 里面的回复 <a href="https://github.com/CocoaPods/CocoaPods/issues/9947#issuecomment-665182547">https://github.com/CocoaPods/CocoaPods/issues/9947#issuecomment-665182547</a> ，请试一下看看能不能帮到你。我也建议遇到问题先放狗 （Google），搞不好一下子就解决啦。</p>
+</blockquote>
+<h5 id="东">*东：</h5>
+<blockquote>
+<p>Pod 版本更新那个地方的几个步骤不错，有启发</p>
+</blockquote>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://BaoziSwifter.github.io/" >
+    &copy;  My New Hugo Site 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

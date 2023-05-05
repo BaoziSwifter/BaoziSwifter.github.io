@@ -29,18 +29,18 @@
 
     
     
-      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
-      <link href="/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
       
     
     
-    <meta property="og:title" content="My New Hugo Site" />
+    <meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://BaoziSwifter.github.io/" />
-<meta itemprop="name" content="My New Hugo Site">
+<meta property="og:url" content="https://BaoziSwifter.github.io/posts/" />
+<meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My New Hugo Site"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
 
 	
@@ -74,7 +74,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          My New Hugo Site
+          Posts
         </h1>
         
       </div>
@@ -84,46 +84,21 @@
 
     <main class="pb7" role="main">
       
- <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
-  </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
       
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/02-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-cocoapod-%E7%BB%9F%E4%B8%80%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86/" class="link black dim">
         
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/02-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-cocoapod-%E7%BB%9F%E4%B8%80%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86/" class="color-inherit dim link">
-            
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          本资源由 itjc8.com 收集整理 精选评论 *虎： 如何回复讲师的回复？只能创建新的留言回复吗？
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      本资源由 itjc8.com 收集整理 精选评论 *虎： 如何回复讲师的回复？只能创建新的留言回复吗？
 官方客服回复： 是的，想要回复讲师的答复，可以在新留言里面的开头标记说明就行
 *虎： &ldquo;第七步，一旦更新的代码并入主分支后，要通过 Slack 等内部通信软件告诉所有开发者 pull 或者 rebase 主分支的代码，并执行pod install来更新他们开发环境的所有依赖库&quot;能否把更新的依赖库也一并 push 到远端仓库，这样团队里其他开发人员就不需要额外 pod install 了？
 讲师回复： 看得很仔细哦，更新和 push 到远程仓库的是 Podfile 以及 Podfile.log 文件，团队其他人员还是需要执行 pod install 安装并更新 Pods 文件夹，这个 Pod 文件夹存放的是所有第三方库的源码文件，我们一般并不把该文件夹放到 Git 里面。因此每个开发环境都需要执行 pod install 来更新。文章中提到，如果开发者不执行 pod install 是没有办法编译项目的，并且有错误提示。
@@ -133,22 +108,13 @@
 **不吃窝边草： CocoaPods 管理依赖库的依赖，这种A依赖B，B依赖C,不是链表么？
 讲师回复： 有时候并不是单链条的链表那么简单哦，可能是一个图，要为图找出依赖关系，需要使用拓扑排序。
 **昆： 老师你好，关于pod update的描述，我有个疑问：如果是使用了 podName，&rsquo;=version&rsquo; 这时候 通过pod update 也会使用 = 号的版本号，而不会去所有都更新吧？
-        </div>
-          <a href="/posts/02-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-cocoapod-%E7%BB%9F%E4%B8%80%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
     </div>
   </div>
-</article>
+</div>
 
-          </div>
-        
-      </section>
-
+        </div>
       
-
-      </div>
-  
+    </section></article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
